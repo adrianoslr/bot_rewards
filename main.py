@@ -17,6 +17,8 @@ def open_site():
     cookie.click()
 
     for word in words:
+        if words.index(word) % 4 == 0 and words.index(word) !=0:
+        time.sleep(900)
         element = browser.find_element(By.ID, 'sb_form_q')
         element.send_keys(word)
         element.submit()
